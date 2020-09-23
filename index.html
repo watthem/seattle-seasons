@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Seattle Seasons</title>
+    <meta name="description" content="Seattle Seasons meme" />
+    <meta name="author" content="MatthewHendricks.net" />
+
+    <style>
+      .calendar {
+        list-style: none;
+      }
+
+      .container {
+        width: 50%;
+        margin: auto;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      li {
+        padding: 1rem 0;
+        font-size: 2rem;
+      }
+
+      .here {
+        font-weight: bold;
+      }
+
+      .here:after {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 12%;
+        width: 300px;
+        height: 180px;
+        -webkit-transform: translateY(-120px);
+        transform: translateY(-120px);
+        opacity: 0.6;
+        background-image: url("./here.png");
+      }
+
+      @media only screen and (max-width: 600px) {
+        li {
+          padding: 0.75rem 0;
+          font-size: 1.5rem;
+        }
+        .container {
+          width: 100%;
+          margin: auto;
+        }
+        .here:after {
+          right: 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Seattle Seasons</h1>
+    <div class="container">
+      <ol class="calendar">
+        <li>The Dark Wet</li>
+        <li>Paralyzing Snow (1/4 inch)</li>
+        <li>Brightening Wet</li>
+        <li>*Suncadia Break*</li>
+        <li>Molding Wet</li>
+        <li>Flowering Wet</li>
+        <li>Glorious Sun</li>
+        <li>Juneuary</li>
+        <li>Oppresive Sun</li>
+        <li>Smoke</li>
+        <li>Welcome Drizzle</li>
+        <li>Spiders</li>
+        <li>Convergence Zones</li>
+        <li>The Dark Wet</li>
+      </ol>
+    </div>
+
+    <script>
+      // add class named "here" to the list item representing the current date/month (+1 for offset)
+      document
+        .querySelectorAll(".calendar li")
+        [new Date().getMonth() + 1].classList.add("here");
+    </script>
+  </body>
+</html>
